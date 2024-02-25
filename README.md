@@ -28,3 +28,7 @@ http://www.lcdwiki.com/10.1inch_HDMI_Display-H
     sudo reboot 
 
 
+we will update the retropie 
+https://retropie.org.uk/docs/Updating-RetroPie/
+
+     sudo ~/RetroPie-Setup/retropie_setup.sh
