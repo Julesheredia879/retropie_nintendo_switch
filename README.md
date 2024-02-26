@@ -15,7 +15,7 @@ https://retropie.org.uk/download/
 
 
 after flash it, we will connect with SSH 
-ssh pi@192.168.3.xx
+    ssh pi@192.168.3.xx
 
 
 
