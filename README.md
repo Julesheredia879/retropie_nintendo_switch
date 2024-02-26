@@ -32,3 +32,32 @@ we will update the retropie
 https://retropie.org.uk/docs/Updating-RetroPie/
 
      sudo ~/RetroPie-Setup/retropie_setup.sh
+
+
+
+     
+after the update we need to install the nintendo switch driver  this is the link:
+
+https://retropie.org.uk/docs/Nintendo-Switch-Controllers/
+
+Installation 
+### First, you need to install dkms-hid-nintendo, a Nintendo HID kernel module:
+     git clone https://github.com/nicman23/dkms-hid-nintendo
+     cd dkms-hid-nintendo
+     sudo dkms add .
+     sudo dkms build nintendo -v 3.2
+     sudo dkms install nintendo -v 3.2
+NOTE : the module version may change, check the driver's page for the correct version to be used with the dkms commands above.
+
+Then, you need joycond, a userspace driver which manages the controllers and exposes their motion inputs.
+
+On a fresh install, you might need to install the libevdev library first:
+
+### 
+    sudo apt-get install libevdev-dev
+
+
+
+
+
+
