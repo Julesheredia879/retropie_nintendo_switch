@@ -58,6 +58,10 @@ On a fresh install, you might need to install the libevdev library first:
 
 
 
+### 1 UPS software https://github.com/Julesheredia879/nintendo_retropie
+    git clone https://github.com/nicman23/dkms-hid-nintendo
+
+
 
 
 
