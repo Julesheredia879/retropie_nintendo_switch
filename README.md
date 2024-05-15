@@ -28,7 +28,7 @@ http://www.lcdwiki.com/10.1inch_HDMI_Display-H
     sudo reboot 
 
 ### /boot/config.txt
-
+    # Julio's configuration 
     #over_voltage=6
     #arm_freq=2000
     #gpu_freq=750
