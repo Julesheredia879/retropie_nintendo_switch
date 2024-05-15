@@ -27,6 +27,45 @@ http://www.lcdwiki.com/10.1inch_HDMI_Display-H
     sudo nano /boot/config.tx
     sudo reboot 
 
+### /boot/config.txt
+
+    #over_voltage=6
+    #arm_freq=2000
+    #gpu_freq=750
+    #force_turbo=1
+    
+    arm_freq=2300
+    gpu_freq=750
+    gpu_mem=32
+    over_voltage=14
+    force_turbo=1
+    
+    hdmi_force_edid_audio=1
+    #max_usb_current=1
+    hdmi_force_hotplug=1
+    config_hdmi_boost=7
+    hdmi_group=2
+    hdmi_mode=87
+    hdmi_drive=2
+    display_rotate=0
+    hdmi_timings=1024 1 50 18 50 600 1 15 3 15 0 0 0 60 0 40000000 3
+    dtoverlay=gpio-shutdown
+    #enable_uart=1
+    enable_uart=1
+    #dtoverlay=disable-bt
+    dtoverlay=miniuart-bt
+    dtoverlay=disable-wifi
+    
+    # Disable the PWR LED
+    #dtparam=pwr_led_trigger=none
+    dtparam=pwr_led_activelow=off
+    # Disable the Activity LED
+    dtparam=act_led_trigger=none
+    dtparam=act_led_activelow=off
+    # Disable ethernet port LEDs
+    dtparam=eth_led0=4
+    dtparam=eth_led1=4
+
 
 we will update the retropie 
 https://retropie.org.uk/docs/Updating-RetroPie/
