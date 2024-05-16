@@ -72,35 +72,47 @@ https://retropie.org.uk/docs/Updating-RetroPie/
 
      sudo ~/RetroPie-Setup/retropie_setup.sh
 
-
-
-     
 after the update we need to install the nintendo switch driver  this is the link:
 
 https://retropie.org.uk/docs/Nintendo-Switch-Controllers/
 
-Installation 
-### First, you need to install dkms-hid-nintendo, a Nintendo HID kernel module:
-     git clone https://github.com/nicman23/dkms-hid-nintendo
-     cd dkms-hid-nintendo
-     sudo dkms add .
-     sudo dkms build nintendo -v 3.2
-     sudo dkms install nintendo -v 3.2
-NOTE : the module version may change, check the driver's page for the correct version to be used with the dkms commands above.
-
-Then, you need joycond, a userspace driver which manages the controllers and exposes their motion inputs.
 
 On a fresh install, you might need to install the libevdev library first:
 
 ### 
     sudo apt-get install libevdev-dev
 
+### 1  this is the documentation about the UPS 
+https://github.com/rcdrones/UPSPACK_V3/blob/master/README_en.md
+ 
+### 1.1 software https://github.com/rcdrones/UPSPACK_V3.git
+    sudo nano /etc/rc.local
+    
+    #Add the following to the line above the exit at the bottom of the page
+    
+    sudo python3 /home/pi/UPSPACK_V3/shutdown_check.py &
 
 
-### 1 UPS software https://github.com/Julesheredia879/nintendo_retropie
-    git clone https://github.com/nicman23/dkms-hid-nintendo
 
 
 
+### 2. Install pngview by AndrewFromMelbourne
+    mkdir ~/src && cd ~/src
+    git clone --depth 1 https://github.com/AndrewFromMelbourne/raspidmx.git
+    cd raspidmx/
+    make -j4
+    sudo cp pngview/pngview /usr/local/bin/
 
 
+### 2.1 Download the script and install dependencies:
+    mkdir ~/scripts && cd ~/scripts
+    git clone  https://github.com/Julesheredia879/retropie_nintendo_switch.git
+    sudo apt-get update
+    sudo apt-get install build-essential python3-dev python3-smbus python3-pip
+    sudo pip3 install pyserial
+
+
+### 6. Temperature
+    vcgencmd measure_temp
+### 7 scp 
+    scp pi@192.168.3.XX:/home/pi/scripts/nintendo_retropie/supertest.py C:\Users\HP\Documents\switch_segunda_generation
